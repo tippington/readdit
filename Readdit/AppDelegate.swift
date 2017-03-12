@@ -21,13 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	
 	func application(app: UIApplication, openURL url: NSURL, options: [String : AnyObject]) -> Bool {
 		if(url.scheme == "Readdit") {
-			let queryParams: [Any] = url.query!.components(separatedBy: "&")
-			let codeParam: [Any] = queryParams.filter { NSPredicate(format: "SELF BEGINSWITH %@", "code=").evaluate(with: $0) }
-			let codeQuery: String = codeParam[0] as! String
-			let code: String = codeQuery.replacingOccurrences(of: "code=", with: "")
-			print("My code is \(code)")
 			
-			NotificationCenter.default.post(name: NSNotification.Name(rawValue: LoginController.kNotification), object: url)
+			NotificationCenter.default.post(name: NSNotification.Name(rawValue: ListController.notification), object: url)
 			
 			return true
 		}

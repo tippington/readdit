@@ -11,7 +11,7 @@ import Foundation
 struct Constants {
 
 	static let clientId = "26WtjMcQ8xGHYg"
-	static let redirectUri = "Readdit://response"
+	static let redirectUri = "readdit://response"
 
 
 

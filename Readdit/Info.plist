@@ -22,7 +22,7 @@
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLName</key>
-			<string>com.reddit.Readdit</string>
+			<string>com.reddit.readdit</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>Readdit</string>

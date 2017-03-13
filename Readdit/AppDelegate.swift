@@ -19,11 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		return true
 	}
 	
-	func application(app: UIApplication, openURL url: NSURL, options: [String : AnyObject]) -> Bool {
-		if(url.scheme == "Readdit") {
-			
-			NotificationCenter.default.post(name: NSNotification.Name(rawValue: ListController.notification), object: url)
-			
+	func application(app: UIApplication, openURL url: URL, options: [String : AnyObject]) -> Bool {
+		if(url.scheme == "readdit") {
 			return true
 		}
 		return false

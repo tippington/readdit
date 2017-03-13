@@ -56,9 +56,9 @@
 		851C32A21E75ED6A003AB88D /* Readdit */ = {
 			isa = PBXGroup;
 			children = (
+				851C32B51E75F4BB003AB88D /* Constants.swift */,
 				851C32A31E75ED6A003AB88D /* AppDelegate.swift */,
 				851C32A51E75ED6A003AB88D /* ListController.swift */,
-				851C32B51E75F4BB003AB88D /* Constants.swift */,
 				851C32A71E75ED6A003AB88D /* Main.storyboard */,
 				851C32AA1E75ED6A003AB88D /* Assets.xcassets */,
 				851C32AC1E75ED6A003AB88D /* LaunchScreen.storyboard */,
@@ -306,6 +306,7 @@
 				851C32B41E75ED6A003AB88D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

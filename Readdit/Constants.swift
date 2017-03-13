@@ -12,7 +12,7 @@ struct Constants {
 
 	static let clientId = "26WtjMcQ8xGHYg"
 	static let redirectUri = "readdit://response"
-
+	static let url = "https://reddit.com/top/.json?count=50"
 
 
 }

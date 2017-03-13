@@ -9,8 +9,6 @@
 import UIKit
 
 class ListController: UITableViewController {
-
-	static let notification = "LoginComplete"
 	
 	@IBOutlet weak var listView: UITableView!
 	
@@ -22,17 +20,7 @@ class ListController: UITableViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		//add notification
-		NotificationCenter.default.addObserver(self, selector: Selector(("finishLogin:")), name: NSNotification.Name(rawValue: ListController.notification), object: nil)
-		
-		//create and add webview
-		webView = UIWebView()
-		webView.frame = UIScreen.main.bounds
-		self.view.addSubview(webView)
-		
-		let authorizationURL = URL(string: "https://ssl.reddit.com/api/v1/authorize?client_id=\(Constants.clientId)&response_type=code&state=TEST&redirect_uri=\(Constants.redirectUri)&duration=permanent&scope=read")
-		let request = URLRequest(url: authorizationURL!)
-		self.webView.loadRequest(request)
+		fetchPosts()
 
 	}
 
@@ -42,21 +30,33 @@ class ListController: UITableViewController {
 	}
 	
 	//actions
-	func finishLogin(notification: NSNotification) {
-		
-		let url = notification.object as! NSURL
-		let queryParams: [Any] = url.query!.components(separatedBy: "&")
-		let codeParam: [Any] = queryParams.filter { NSPredicate(format: "SELF BEGINSWITH %@", "code=").evaluate(with: $0) }
-		let codeQuery: String = codeParam[0] as! String
-		let code: String = codeQuery.replacingOccurrences(of: "code=", with: "")
-		print("My code is \(code)")
-		
-		self.webView!.removeFromSuperview()
+	func fetchPosts() {
+		let mySession = URLSession.shared
+		let url: NSURL = NSURL(string: Constants.url)!
+		let networkTask = mySession.dataTask(with: url as URL, completionHandler: {data, response, error -> Void in
+			do {
+				let json = try JSONSerialization.jsonObject(with: data!, options:.allowFragments) as! [String:AnyObject]
+				let data = json["data"]!["children"]! as! [AnyObject]
+				DispatchQueue.main.async(execute: {
+					for i in 0..<data.count {
+						let item = (data[i] as! [String:AnyObject])["data"]!
+						self.listItems.append(item)
+//						print(item)
+						self.listView!.reloadData()
+					}
+				})
+			} catch {
+				print(error.localizedDescription)
+			}
+		})
+		networkTask.resume()
 	}
 	
 	//delegate methods
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = UITableViewCell()
+		let item = listItems[indexPath.row] as! [String:AnyObject]
+		cell.textLabel!.text = item["title"] as! String
 		
 		return cell
 	}
@@ -70,7 +70,7 @@ class ListController: UITableViewController {
 	}
 	
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return 50
+		return listItems.count
 	}
 	
 	override func numberOfSections(in tableView: UITableView) -> Int {

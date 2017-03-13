@@ -32,6 +32,9 @@
                             <outlet property="delegate" destination="KMS-39-9cX" id="5ka-QT-949"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="listView" destination="eO6-GJ-hRg" id="Lcf-aV-FR6"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mkv-mk-Nf2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

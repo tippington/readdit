@@ -13,6 +13,7 @@
 		851C32AB1E75ED6A003AB88D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 851C32AA1E75ED6A003AB88D /* Assets.xcassets */; };
 		851C32AE1E75ED6A003AB88D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 851C32AC1E75ED6A003AB88D /* LaunchScreen.storyboard */; };
 		851C32B61E75F4BB003AB88D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851C32B51E75F4BB003AB88D /* Constants.swift */; };
+		852FDC911E773E03006BAD32 /* PostObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852FDC901E773E03006BAD32 /* PostObject.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		851C32AD1E75ED6A003AB88D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		851C32AF1E75ED6A003AB88D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		851C32B51E75F4BB003AB88D /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		852FDC901E773E03006BAD32 /* PostObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostObject.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				851C32B51E75F4BB003AB88D /* Constants.swift */,
 				851C32A31E75ED6A003AB88D /* AppDelegate.swift */,
 				851C32A51E75ED6A003AB88D /* ListController.swift */,
+				852FDC901E773E03006BAD32 /* PostObject.swift */,
 				851C32A71E75ED6A003AB88D /* Main.storyboard */,
 				851C32AA1E75ED6A003AB88D /* Assets.xcassets */,
 				851C32AC1E75ED6A003AB88D /* LaunchScreen.storyboard */,
@@ -140,6 +143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				852FDC911E773E03006BAD32 /* PostObject.swift in Sources */,
 				851C32A61E75ED6A003AB88D /* ListController.swift in Sources */,
 				851C32A41E75ED6A003AB88D /* AppDelegate.swift in Sources */,
 				851C32B61E75F4BB003AB88D /* Constants.swift in Sources */,

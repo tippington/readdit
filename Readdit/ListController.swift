@@ -12,7 +12,7 @@ class ListController: UITableViewController {
 	
 	@IBOutlet weak var listView: UITableView!
 	
-	var listItems = [AnyObject]()
+	var listItems = [PostObject]()
 	var webView: UIWebView!
 
 	
@@ -40,8 +40,13 @@ class ListController: UITableViewController {
 				DispatchQueue.main.async(execute: {
 					for i in 0..<data.count {
 						let item = (data[i] as! [String:AnyObject])["data"]!
-						self.listItems.append(item)
-//						print(item)
+						let post = PostObject(with: item as! [String:AnyObject])
+						self.listItems.append(post)
+						
+						if (i == 0) {
+							print(item)
+						}
+						
 						self.listView!.reloadData()
 					}
 				})
@@ -55,8 +60,8 @@ class ListController: UITableViewController {
 	//delegate methods
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = UITableViewCell()
-		let item = listItems[indexPath.row] as! [String:AnyObject]
-		cell.textLabel!.text = item["title"] as! String
+		let post = listItems[indexPath.row]
+		cell.textLabel!.text = post.title
 		
 		return cell
 	}
@@ -66,6 +71,8 @@ class ListController: UITableViewController {
 	}
 	
 	override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+		
+		
 		return 30
 	}
 	
@@ -77,7 +84,7 @@ class ListController: UITableViewController {
 		return 1
 	}
 	
-	//datasource methods
+	
 	
 	
 }

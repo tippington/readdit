@@ -20,6 +20,7 @@ struct PostObject {
 	var type: String?
 	var url: String?
 	var thumbUrl: String?
+	var author: String?
 	
 	init(with: [String:AnyObject]) {
 		createdAtUTC = 0
@@ -32,6 +33,7 @@ struct PostObject {
 		type = ""
 		url = ""
 		thumbUrl = ""
+		author = ""
 		
 		if let c_utc = with["created_utc"] as? Int {
 			createdAtUTC = c_utc
@@ -67,5 +69,10 @@ struct PostObject {
 		if let thumb = with["thumbnail"] as? String {
 			thumbUrl = thumb
 		}
+		if let mAuthor = with["author"] as? String {
+			author = mAuthor
+		}
+		
+		print("init object \(title) with score \(score)")
 	}
 }

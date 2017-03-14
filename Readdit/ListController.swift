@@ -5,7 +5,7 @@
 //  Created by Clinton VanSciver on 3/12/17.
 //  Copyright © 2017 Clinton VanSciver. All rights reserved.
 //
-
+import Foundation
 import UIKit
 
 class ListController: UITableViewController {
@@ -19,9 +19,10 @@ class ListController: UITableViewController {
 	//lifecycle
 	override func viewDidLoad() {
 		super.viewDidLoad()
+
+		listView.register(UINib(nibName: "PostCell", bundle: nil), forCellReuseIdentifier: "postCell")
 		
 		fetchPosts()
-
 	}
 
 	override func didReceiveMemoryWarning() {
@@ -43,10 +44,6 @@ class ListController: UITableViewController {
 						let post = PostObject(with: item as! [String:AnyObject])
 						self.listItems.append(post)
 						
-						if (i == 0) {
-							print(item)
-						}
-						
 						self.listView!.reloadData()
 					}
 				})
@@ -59,9 +56,13 @@ class ListController: UITableViewController {
 	
 	//delegate methods
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell = UITableViewCell()
+		let cell = tableView.dequeueReusableCell(withIdentifier: "postCell", for: indexPath) as! PostCellController
 		let post = listItems[indexPath.row]
-		cell.textLabel!.text = post.title
+		
+		cell.titleLabel!.text = post.title
+		cell.authorLabel!.text = post.author
+		cell.subredditLabel!.text = post.sub
+		cell.scoreLabel!.text = "\(post.score)"
 		
 		return cell
 	}
@@ -71,9 +72,7 @@ class ListController: UITableViewController {
 	}
 	
 	override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-		
-		
-		return 30
+		return 100
 	}
 	
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

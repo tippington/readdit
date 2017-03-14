@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gX2-HD-eKr" id="S0t-kr-a5b">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -39,6 +39,39 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mkv-mk-Nf2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1058" y="170"/>
+        </scene>
+        <!--Post View Controller-->
+        <scene sceneID="n8f-8V-CRX">
+            <objects>
+                <viewController id="8To-If-xie" customClass="PostViewController" customModule="Readdit" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LV1-sT-UUe"/>
+                        <viewControllerLayoutGuide type="bottom" id="Eg0-PR-mI3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xcc-hb-dIv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gzV-Ke-p98">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gzV-Ke-p98" firstAttribute="width" secondItem="xcc-hb-dIv" secondAttribute="width" id="D03-ID-RGJ"/>
+                            <constraint firstItem="gzV-Ke-p98" firstAttribute="centerX" secondItem="xcc-hb-dIv" secondAttribute="centerX" id="JK4-Ha-rev"/>
+                            <constraint firstItem="gzV-Ke-p98" firstAttribute="height" secondItem="xcc-hb-dIv" secondAttribute="height" id="Ppy-ld-WtB"/>
+                            <constraint firstItem="gzV-Ke-p98" firstAttribute="centerY" secondItem="xcc-hb-dIv" secondAttribute="centerY" id="gic-mR-Oai"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="gzV-Ke-p98" id="P4G-rd-VHY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SIF-T6-dMN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-303.19999999999999" y="173.16341829085459"/>
         </scene>
     </scenes>
 </document>

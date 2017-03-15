@@ -34,6 +34,7 @@
                     </tableView>
                     <connections>
                         <outlet property="listView" destination="eO6-GJ-hRg" id="Lcf-aV-FR6"/>
+                        <segue destination="8To-If-xie" kind="show" identifier="postViewSegue" id="LSG-jR-kZm"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mkv-mk-Nf2" userLabel="First Responder" sceneMemberID="firstResponder"/>

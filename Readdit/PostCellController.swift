@@ -17,7 +17,9 @@ class PostCellController: UITableViewCell {
 	@IBOutlet weak var scoreLabel: UILabel!
 	@IBOutlet weak var thumbnail: UIImageView!
 	
-	
+	func noThumb() {
+		titleLabel.frame = CGRect(x: titleLabel.frame.origin.x - 40, y: titleLabel.frame.origin.y, width: titleLabel.frame.size.width, height: titleLabel.frame.size.height)
+	}
 	
 	
 }

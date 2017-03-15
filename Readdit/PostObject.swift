@@ -72,7 +72,5 @@ struct PostObject {
 		if let mAuthor = with["author"] as? String {
 			author = mAuthor
 		}
-		
-		print("init object \(title) with score \(score)")
 	}
 }

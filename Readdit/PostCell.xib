@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -15,51 +16,93 @@
             <rect key="frame" x="0.0" y="0.0" width="440" height="108"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Jg1-1t-n0I" id="FrF-3d-mUh">
-                <rect key="frame" x="0.0" y="0.0" width="440" height="107.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="440" height="107"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="This is where the post title will be displayed." lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="4Lc-fa-WhJ" userLabel="Title">
-                        <rect key="frame" x="84" y="8" width="287" height="71"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is where the post title will be displayed." lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="4Lc-fa-WhJ" userLabel="Title">
+                        <rect key="frame" x="84" y="8" width="265" height="71"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="265" id="PdU-bS-lCX"/>
+                            <constraint firstAttribute="height" constant="71" id="Pvg-iX-DkT"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="subreddit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GqI-W4-b1D" userLabel="Subreddit">
-                        <rect key="frame" x="25" y="78" width="164" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="authorusername" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bVg-nM-WxI" userLabel="Author">
+                        <rect key="frame" x="268" y="78" width="164" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="FMx-OD-Vby"/>
+                            <constraint firstAttribute="width" constant="164" id="wCy-hy-LpW"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="authorusername" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bVg-nM-WxI" userLabel="Author">
-                        <rect key="frame" x="168" y="78" width="164" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hrs-bg-A7C" userLabel="Thumbnail">
-                        <rect key="frame" x="8" y="13" width="68" height="66"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2084" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wvm-63-e2c" userLabel="Score">
-                        <rect key="frame" x="379" y="10" width="53" height="87"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2084" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wvm-63-e2c" userLabel="Score">
+                        <rect key="frame" x="362" y="10" width="70" height="87"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="87" id="I0v-PI-xLE"/>
+                            <constraint firstAttribute="width" constant="70" id="QnW-C4-6fw"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hrs-bg-A7C" userLabel="Thumbnail">
+                        <rect key="frame" x="8" y="13" width="68" height="66"/>
+                        <color key="backgroundColor" red="0.74781168190000002" green="0.74781168190000002" blue="0.74781168190000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="68" id="QwO-3U-eDV"/>
+                            <constraint firstAttribute="height" constant="66" id="Z3G-vg-Yn7"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="subreddit" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GqI-W4-b1D" userLabel="Subreddit">
+                        <rect key="frame" x="8" y="78" width="181" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="181" id="3Sl-AR-L1y"/>
+                            <constraint firstAttribute="height" constant="21" id="BWu-86-dwc"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12 hours ago" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H4L-VA-CTO" userLabel="Created At">
+                        <rect key="frame" x="130" y="78" width="181" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="Pvu-lm-ua7"/>
+                            <constraint firstAttribute="width" constant="181" id="m6p-d5-14e"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="Wvm-63-e2c" firstAttribute="top" secondItem="FrF-3d-mUh" secondAttribute="topMargin" constant="2" id="994-yP-fKG"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="bVg-nM-WxI" secondAttribute="trailing" id="Cke-yf-qhR"/>
+                    <constraint firstItem="4Lc-fa-WhJ" firstAttribute="leading" secondItem="Hrs-bg-A7C" secondAttribute="trailing" constant="8" id="DrH-8x-NtC"/>
+                    <constraint firstItem="Hrs-bg-A7C" firstAttribute="top" secondItem="FrF-3d-mUh" secondAttribute="topMargin" constant="5" id="FkA-yI-MMO"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Wvm-63-e2c" secondAttribute="trailing" id="GxM-K2-t3a"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="H4L-VA-CTO" secondAttribute="bottom" id="JaN-1I-91S"/>
+                    <constraint firstItem="H4L-VA-CTO" firstAttribute="centerX" secondItem="FrF-3d-mUh" secondAttribute="centerX" id="LaN-PK-a2u"/>
+                    <constraint firstAttribute="topMargin" secondItem="4Lc-fa-WhJ" secondAttribute="top" id="Oth-DX-Lax"/>
+                    <constraint firstItem="GqI-W4-b1D" firstAttribute="top" secondItem="Hrs-bg-A7C" secondAttribute="bottom" constant="-1" id="SbJ-0W-L93"/>
+                    <constraint firstItem="Wvm-63-e2c" firstAttribute="leading" secondItem="bVg-nM-WxI" secondAttribute="trailing" constant="-70" id="YGy-iy-1tT"/>
+                    <constraint firstItem="bVg-nM-WxI" firstAttribute="top" secondItem="Wvm-63-e2c" secondAttribute="bottom" constant="-19" id="p6o-gu-iP8"/>
+                    <constraint firstAttribute="leadingMargin" secondItem="GqI-W4-b1D" secondAttribute="leading" id="wlt-sN-iC8"/>
+                    <constraint firstAttribute="leadingMargin" secondItem="Hrs-bg-A7C" secondAttribute="leading" id="yVE-8q-enp"/>
+                </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="authorLabel" destination="bVg-nM-WxI" id="Wuu-IA-ZU1"/>
+                <outlet property="createdAtLabel" destination="H4L-VA-CTO" id="Dte-f5-CHy"/>
                 <outlet property="scoreLabel" destination="Wvm-63-e2c" id="cOY-X1-DRl"/>
                 <outlet property="subredditLabel" destination="GqI-W4-b1D" id="tUI-Pd-UDZ"/>
                 <outlet property="thumbnail" destination="Hrs-bg-A7C" id="T6e-sR-0da"/>
                 <outlet property="titleLabel" destination="4Lc-fa-WhJ" id="dSf-Nw-WHJ"/>
             </connections>
-            <point key="canvasLocation" x="-100" y="-118"/>
+            <point key="canvasLocation" x="-355" y="-174"/>
         </tableViewCell>
     </objects>
 </document>

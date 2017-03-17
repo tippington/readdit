@@ -82,10 +82,16 @@ class ListController: UITableViewController {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "postCell", for: indexPath) as! PostCellController
 		let post = listItems[indexPath.row]
 		
-		cell.titleLabel!.text = post.title
-		cell.authorLabel!.text = post.author
-		cell.subredditLabel!.text = post.sub
-		cell.scoreLabel!.text = "\(post.score)"
+		cell.titleLabel!.text = post.title!
+		cell.authorLabel!.text = post.author!
+		cell.subredditLabel!.text = post.sub!
+		cell.scoreLabel!.text = "\(post.score!)"
+		
+		let unix = post.createdAtUTC! as UnixTime
+		let dateFormatter = DateFormatter()
+		let since = dateFormatter.timeSince(from: unix.date, numericDates: false)
+		
+		cell.createdAtLabel!.text = since
 		
 		loadImage(urlString: post.thumbUrl!, frame: cell.thumbnail)
 		

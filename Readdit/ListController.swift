@@ -12,10 +12,13 @@ class ListController: UITableViewController {
 	
 	@IBOutlet weak var listView: UITableView!
 	
+	static let thumbNotification = "ThumbnailPressed"
+	
 	var listItems = [PostObject]()
 	var webView: UIWebView!
 	
 	var selectedPost: PostObject?
+	var selectedImage: String?
 
 	
 	//lifecycle
@@ -34,9 +37,12 @@ class ListController: UITableViewController {
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if segue.identifier == "postViewSegue" {
-			//set destination view controller selectedPost to self.selectedPost
 			let destVc = segue.destination as! PostViewController
 			destVc.selectedPost = self.selectedPost
+		}
+		if segue.identifier == "fullImageSegue" {
+			let destVc = segue.destination as! FullImageViewController
+			destVc.imageUrl = self.selectedImage!
 		}
 	}
 	
@@ -71,10 +77,20 @@ class ListController: UITableViewController {
 		let imgURL: NSURL = NSURL(string: urlString)!
 		let networkTask = mySession.dataTask(with: imgURL as URL, completionHandler: {data, response, error -> Void in
 			if error == nil {
-					frame.image = UIImage(data: data!)
+					DispatchQueue.main.async {
+						frame.image = UIImage(data: data!)
+						frame.layer.cornerRadius = 6
+					}
 				}
 		})
 		networkTask.resume()
+	}
+	
+	func thumbnailPressed(notification: NSNotification) {
+		let row = notification.object as! Int
+		let post = listItems[row]
+		self.selectedImage = post.thumbUrl!
+		performSegue(withIdentifier: "fullImageSegue", sender: nil)
 	}
 	
 	//delegate methods
@@ -82,17 +98,21 @@ class ListController: UITableViewController {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "postCell", for: indexPath) as! PostCellController
 		let post = listItems[indexPath.row]
 		
-		cell.titleLabel!.text = post.title!
-		cell.authorLabel!.text = post.author!
-		cell.subredditLabel!.text = post.sub!
-		cell.scoreLabel!.text = "\(post.score!)"
-		
 		let unix = post.createdAtUTC! as UnixTime
 		let dateFormatter = DateFormatter()
 		let since = dateFormatter.timeSince(from: unix.date, numericDates: false)
 		
-		cell.createdAtLabel!.text = since
+		cell.row = indexPath.row
 		
+		DispatchQueue.main.async {
+			cell.titleLabel!.text = post.title!
+			cell.authorLabel!.text = post.author!
+			cell.subredditLabel!.text = post.sub!
+			cell.scoreLabel!.text = "\(post.score!)"
+			cell.createdAtLabel!.text = since
+		}
+		
+		cell.thumbnail.layer.cornerRadius = 6
 		loadImage(urlString: post.thumbUrl!, frame: cell.thumbnail)
 		
 		return cell

@@ -16,14 +16,23 @@
             <rect key="frame" x="0.0" y="0.0" width="440" height="108"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Jg1-1t-n0I" id="FrF-3d-mUh">
-                <rect key="frame" x="0.0" y="0.0" width="440" height="107"/>
+                <rect key="frame" x="0.0" y="0.0" width="440" height="107.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is where the post title will be displayed." lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="4Lc-fa-WhJ" userLabel="Title">
-                        <rect key="frame" x="84" y="8" width="265" height="71"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DdR-7o-o2k" userLabel="Thumbnail Button">
+                        <rect key="frame" x="0.0" y="0.0" width="83" height="79"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="265" id="PdU-bS-lCX"/>
-                            <constraint firstAttribute="height" constant="71" id="Pvg-iX-DkT"/>
+                            <constraint firstAttribute="width" constant="83" id="tJC-dV-0Ps"/>
+                            <constraint firstAttribute="height" constant="79" id="ypI-Fm-Y6a"/>
+                        </constraints>
+                        <connections>
+                            <action selector="thumbnailBtnPressed:" destination="Jg1-1t-n0I" eventType="touchUpInside" id="c7T-tW-3pB"/>
+                        </connections>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is where the post title will be displayed." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="4Lc-fa-WhJ" userLabel="Title">
+                        <rect key="frame" x="84" y="8" width="277" height="71"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="71" id="exa-77-bFN"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
@@ -81,19 +90,24 @@
                 <constraints>
                     <constraint firstItem="Wvm-63-e2c" firstAttribute="top" secondItem="FrF-3d-mUh" secondAttribute="topMargin" constant="2" id="994-yP-fKG"/>
                     <constraint firstAttribute="trailingMargin" secondItem="bVg-nM-WxI" secondAttribute="trailing" id="Cke-yf-qhR"/>
-                    <constraint firstItem="4Lc-fa-WhJ" firstAttribute="leading" secondItem="Hrs-bg-A7C" secondAttribute="trailing" constant="8" id="DrH-8x-NtC"/>
                     <constraint firstItem="Hrs-bg-A7C" firstAttribute="top" secondItem="FrF-3d-mUh" secondAttribute="topMargin" constant="5" id="FkA-yI-MMO"/>
                     <constraint firstAttribute="trailingMargin" secondItem="Wvm-63-e2c" secondAttribute="trailing" id="GxM-K2-t3a"/>
                     <constraint firstAttribute="bottomMargin" secondItem="H4L-VA-CTO" secondAttribute="bottom" id="JaN-1I-91S"/>
                     <constraint firstItem="H4L-VA-CTO" firstAttribute="centerX" secondItem="FrF-3d-mUh" secondAttribute="centerX" id="LaN-PK-a2u"/>
-                    <constraint firstAttribute="topMargin" secondItem="4Lc-fa-WhJ" secondAttribute="top" id="Oth-DX-Lax"/>
+                    <constraint firstItem="DdR-7o-o2k" firstAttribute="leading" secondItem="FrF-3d-mUh" secondAttribute="leadingMargin" constant="-8" id="LaS-iW-UUW"/>
                     <constraint firstItem="GqI-W4-b1D" firstAttribute="top" secondItem="Hrs-bg-A7C" secondAttribute="bottom" constant="-1" id="SbJ-0W-L93"/>
                     <constraint firstItem="Wvm-63-e2c" firstAttribute="leading" secondItem="bVg-nM-WxI" secondAttribute="trailing" constant="-70" id="YGy-iy-1tT"/>
+                    <constraint firstItem="4Lc-fa-WhJ" firstAttribute="leading" secondItem="Hrs-bg-A7C" secondAttribute="trailing" constant="8" id="dVw-4r-NBC"/>
+                    <constraint firstItem="Wvm-63-e2c" firstAttribute="leading" secondItem="4Lc-fa-WhJ" secondAttribute="trailing" constant="1" id="j3Y-MD-Deq"/>
                     <constraint firstItem="bVg-nM-WxI" firstAttribute="top" secondItem="Wvm-63-e2c" secondAttribute="bottom" constant="-19" id="p6o-gu-iP8"/>
+                    <constraint firstItem="H4L-VA-CTO" firstAttribute="top" secondItem="4Lc-fa-WhJ" secondAttribute="bottom" constant="-1" id="rrd-TB-WrJ"/>
                     <constraint firstAttribute="leadingMargin" secondItem="GqI-W4-b1D" secondAttribute="leading" id="wlt-sN-iC8"/>
                     <constraint firstAttribute="leadingMargin" secondItem="Hrs-bg-A7C" secondAttribute="leading" id="yVE-8q-enp"/>
                 </constraints>
             </tableViewCellContentView>
+            <constraints>
+                <constraint firstItem="DdR-7o-o2k" firstAttribute="top" secondItem="Jg1-1t-n0I" secondAttribute="top" id="Zmf-EB-7mW"/>
+            </constraints>
             <connections>
                 <outlet property="authorLabel" destination="bVg-nM-WxI" id="Wuu-IA-ZU1"/>
                 <outlet property="createdAtLabel" destination="H4L-VA-CTO" id="Dte-f5-CHy"/>
@@ -102,7 +116,7 @@
                 <outlet property="thumbnail" destination="Hrs-bg-A7C" id="T6e-sR-0da"/>
                 <outlet property="titleLabel" destination="4Lc-fa-WhJ" id="dSf-Nw-WHJ"/>
             </connections>
-            <point key="canvasLocation" x="-355" y="-174"/>
+            <point key="canvasLocation" x="-600" y="-611"/>
         </tableViewCell>
     </objects>
 </document>

@@ -18,4 +18,10 @@ class PostCellController: UITableViewCell {
 	@IBOutlet weak var createdAtLabel: UILabel!
 	@IBOutlet weak var thumbnail: UIImageView!
 	
+	var row: Int!
+	
+	@IBAction func thumbnailBtnPressed(_ sender: AnyObject?) {
+		NotificationCenter.default.post(name: NSNotification.Name(rawValue: ListController.thumbNotification), object: row)
+	}
+	
 }

@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,7 +23,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gX2-HD-eKr" id="S0t-kr-a5b">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -35,6 +36,7 @@
                     <connections>
                         <outlet property="listView" destination="eO6-GJ-hRg" id="Lcf-aV-FR6"/>
                         <segue destination="8To-If-xie" kind="show" identifier="postViewSegue" id="LSG-jR-kZm"/>
+                        <segue destination="XmD-yQ-lwi" kind="show" identifier="fullImageSegue" id="ou4-jl-cjg"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mkv-mk-Nf2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -73,6 +75,38 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SIF-T6-dMN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-303.19999999999999" y="173.16341829085459"/>
+        </scene>
+        <!--Full Image View Controller-->
+        <scene sceneID="9kY-g0-wdW">
+            <objects>
+                <viewController id="XmD-yQ-lwi" customClass="FullImageViewController" customModule="Readdit" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zjY-Te-c23"/>
+                        <viewControllerLayoutGuide type="bottom" id="W6c-2m-LfJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="HBz-Z2-3QT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ds8-ed-712">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ds8-ed-712" secondAttribute="trailing" constant="-16" id="1CV-MZ-UOf"/>
+                            <constraint firstItem="Ds8-ed-712" firstAttribute="top" secondItem="zjY-Te-c23" secondAttribute="bottom" constant="-20" id="BO7-os-dO3"/>
+                            <constraint firstItem="Ds8-ed-712" firstAttribute="leading" secondItem="HBz-Z2-3QT" secondAttribute="leadingMargin" constant="-16" id="gbY-2T-9sN"/>
+                            <constraint firstItem="W6c-2m-LfJ" firstAttribute="top" secondItem="Ds8-ed-712" secondAttribute="bottom" id="q7o-I0-KDB"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="Ds8-ed-712" id="gfy-ZI-BQp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vWU-JB-eBZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-303.19999999999999" y="925.18740629685169"/>
         </scene>
     </scenes>
 </document>

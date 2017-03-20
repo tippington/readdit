@@ -28,7 +28,7 @@ class PostViewController: UIViewController {
 	}
 	
 	func initUI() {
-//		webView.load
+		webView.loadRequest(URLRequest(url: URL(string: (selectedPost?.url)!)!))
 	}
 	
 }

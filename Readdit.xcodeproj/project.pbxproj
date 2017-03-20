@@ -14,6 +14,7 @@
 		851C32AE1E75ED6A003AB88D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 851C32AC1E75ED6A003AB88D /* LaunchScreen.storyboard */; };
 		851C32B61E75F4BB003AB88D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851C32B51E75F4BB003AB88D /* Constants.swift */; };
 		852FDC911E773E03006BAD32 /* PostObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852FDC901E773E03006BAD32 /* PostObject.swift */; };
+		859A74771E7DBBB800A5F6C7 /* FullImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859A74761E7DBBB800A5F6C7 /* FullImageViewController.swift */; };
 		859E01D41E7C7633003490E6 /* EpochHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859E01D31E7C7633003490E6 /* EpochHelper.swift */; };
 		859E01D61E7C785B003490E6 /* TimeSince.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859E01D51E7C785B003490E6 /* TimeSince.swift */; };
 		85CCB0811E78707A00394141 /* PostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85CCB0801E78707A00394141 /* PostCell.xib */; };
@@ -31,6 +32,7 @@
 		851C32AF1E75ED6A003AB88D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		851C32B51E75F4BB003AB88D /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		852FDC901E773E03006BAD32 /* PostObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostObject.swift; sourceTree = "<group>"; };
+		859A74761E7DBBB800A5F6C7 /* FullImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullImageViewController.swift; sourceTree = "<group>"; };
 		859E01D31E7C7633003490E6 /* EpochHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EpochHelper.swift; sourceTree = "<group>"; };
 		859E01D51E7C785B003490E6 /* TimeSince.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeSince.swift; sourceTree = "<group>"; };
 		85CCB0801E78707A00394141 /* PostCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostCell.xib; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				851C32A51E75ED6A003AB88D /* ListController.swift */,
 				85CCB08D1E78765500394141 /* PostCellController.swift */,
 				85CCB0821E7870BB00394141 /* PostViewController.swift */,
+				859A74761E7DBBB800A5F6C7 /* FullImageViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -185,6 +188,7 @@
 			files = (
 				852FDC911E773E03006BAD32 /* PostObject.swift in Sources */,
 				85CCB08E1E78765500394141 /* PostCellController.swift in Sources */,
+				859A74771E7DBBB800A5F6C7 /* FullImageViewController.swift in Sources */,
 				851C32A61E75ED6A003AB88D /* ListController.swift in Sources */,
 				851C32A41E75ED6A003AB88D /* AppDelegate.swift in Sources */,
 				859E01D41E7C7633003490E6 /* EpochHelper.swift in Sources */,
